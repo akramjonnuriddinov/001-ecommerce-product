@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>Ecommerce</title>
     <!-- NORMALIZE -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- STYLES -->
@@ -66,24 +66,34 @@
             <div class="container">
                 <div class="hero__container">
                     <div class="hero__img-wrapper">
-                        <img class="hero__img" src="./img/Foot.jpg" srcset="./img/Foot.jpg 1x, ./img/Foot@2x.jpg 2x" alt="Oyoq kiyim rasmi" width="445" height="445">
+                        <button class="hero__img-btn js-hero-img-btn">
+                            <img class="hero__img js-hero-img" src="./img/Foot.jpg" srcset="./img/Foot.jpg 1x, ./img/Foot@2x.jpg 2x" alt="Oyoq kiyim rasmi" width="445" height="445">
+                        </button>
                         <div class="gallery">
-                            <div class="gallery__img-wrapper">
-                                <span class="gallery__img-hover"></span>
-                                <img class="gallery__img" src="./img/gallery-1.jpg" srcset="./img/gallery-1.jpg 1x, ./img/gallery-1@2x.jpg 2x" alt="" width="88" height="88">
-                            </div>
-                            <div class="gallery__img-wrapper">
-                                <span class="gallery__img-hover"></span>
-                                <img class="gallery__img" src="./img/gallery-2.jpg" srcset="./img/gallery-2.jpg 1x, ./img/gallery-2@2x.jpg 2x" alt="" width="88" height="88">
-                            </div>
-                            <div class="gallery__img-wrapper">
-                                <span class="gallery__img-hover"></span>
-                                <img class="gallery__img" src="./img/gallery-3.jpg" srcset="./img/gallery-3.jpg 1x, ./img/gallery-3@2x.jpg 2x" alt="" width="88" height="88">
-                            </div>
-                            <div class="gallery__img-wrapper">
-                                <span class="gallery__img-hover"></span>
-                                <img class="gallery__img" src="./img/gallery-4.jpg" srcset="./img/gallery-4.jpg 1x, ./img/gallery-4@2x.jpg 2x" alt="" width="88" height="88">
-                            </div>
+                            <button class="gallery__img-btn hero-gallery-img-btn" type="button">
+                                <span class="gallery__img-wrapper">
+                                    <img class="gallery__img js-hero-gallery-img" src="./img/gallery-1.jpg" srcset="./img/gallery-1.jpg 1x, ./img/gallery-1@2x.jpg 2x" alt="" width="88" height="88">
+                                    <span class="gallery__img-hover"></span>
+                                </span>
+                            </button>
+                            <button class="gallery__img-btn hero-gallery-img-btn" type="button">
+                                <span class="gallery__img-wrapper">
+                                    <img class="gallery__img js-hero-gallery-img" src="./img/gallery-2.jpg" srcset="./img/gallery-2.jpg 1x, ./img/gallery-2@2x.jpg 2x" alt="" width="88" height="88">
+                                    <span class="gallery__img-hover"></span>
+                                </span>
+                            </button>
+                            <button class="gallery__img-btn hero-gallery-img-btn" type="button">
+                                <span class="gallery__img-wrapper">
+                                    <img class="gallery__img js-hero-gallery-img" src="./img/gallery-3.jpg" srcset="./img/gallery-3.jpg 1x, ./img/gallery-3@2x.jpg 2x" alt="" width="88" height="88">
+                                    <span class="gallery__img-hover"></span>
+                                </span>
+                            </button>
+                            <button class="gallery__img-btn hero-gallery-img-btn" type="button">
+                                <span class="gallery__img-wrapper">
+                                    <img class="gallery__img js-hero-gallery-img" src="./img/gallery-4.jpg" srcset="./img/gallery-4.jpg 1x, ./img/gallery-4@2x.jpg 2x" alt="" width="88" height="88">
+                                    <span class="gallery__img-hover"></span>
+                                </span>
+                            </button>
                         </div>
                     </div>
                     <div class="hero__content">
@@ -114,6 +124,52 @@
             </div>
         </section>
     </main>
+
+    <section class="modal js-modal">
+        <div class="modal__dialog container">
+            <div class="modal__content">
+                <button class="modal__close-btn js-modal-close-btn">
+                    <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.857 17.143 0 10 7.143 2.857 0 0 2.857 7.143 10 0 17.143 2.857 20 10 12.857 17.143 20 20 17.143 12.857 10 20 2.857Z" fill="currentColor"/></svg>
+                </button>
+                <div class="modal__img-wrapper">
+                    <button class="modal__img-change prev-btn js-prev-btn" type="button">
+                        <svg width="13" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m11 2-8 8 8 8" stroke="currentColor" stroke-width="3"/></svg>
+                    </button>
+                    <img class="modal__img js-modal-img" src="./img/Foot.jpg" alt="" width="550" height="550">
+                    <button class="modal__img-change next-btn js-next-btn" type="button">
+                        <svg width="13" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m2 2 8 8-8 8" stroke="currentColor" stroke-width="3"/></svg>
+                    </button>
+                </div>
+                <div class="gallery modal__gallery">
+                    <button class="gallery__img-btn js-gallery-img-btn" type="button">
+                        <span class="gallery__img-wrapper">
+                            <img class="gallery__img js-gallery-img" src="./img/gallery-1.jpg" srcset="./img/gallery-1.jpg 1x, ./img/gallery-1@2x.jpg 2x" alt="" width="88" height="88">
+                            <span class="gallery__img-hover"></span>
+                        </span>
+                    </button>
+                    <button class="gallery__img-btn js-gallery-img-btn" type="button">
+                        <span class="gallery__img-wrapper">
+                            <img class="gallery__img js-gallery-img" src="./img/gallery-2.jpg" srcset="./img/gallery-2.jpg 1x, ./img/gallery-2@2x.jpg 2x" alt="" width="88" height="88">
+                            <span class="gallery__img-hover"></span>
+                        </span>
+                    </button>
+                    
+                    <button class="gallery__img-btn js-gallery-img-btn" type="button">
+                        <span class="gallery__img-wrapper">
+                            <img class="gallery__img js-gallery-img" src="./img/gallery-3.jpg" srcset="./img/gallery-3.jpg 1x, ./img/gallery-3@2x.jpg 2x" alt="" width="88" height="88">
+                            <span class="gallery__img-hover"></span>
+                        </span>
+                    </button>
+                    <button class="gallery__img-btn js-gallery-img-btn" type="button">
+                        <span class="gallery__img-wrapper">
+                            <img class="gallery__img js-gallery-img" src="./img/gallery-4.jpg" srcset="./img/gallery-4.jpg 1x, ./img/gallery-4@2x.jpg 2x" alt="" width="88" height="88">
+                            <span class="gallery__img-hover"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     
     <script src="js/main.js"></script>

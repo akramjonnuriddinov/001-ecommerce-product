@@ -219,15 +219,36 @@ img {
     margin-right: 125px;
 }
 
+.hero__img-btn {
+    display: block;
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    border: none;
+    margin-bottom: 32px;
+    cursor: zoom-in;
+    border-radius: 15px;
+}
+
 .hero__img {
     min-width: 445px;
     height: 445px;
     border-radius: 15px;
-    margin-bottom: 32px;
 }
 
 .gallery {
     display: flex;
+}
+
+.gallery__img-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+.gallery__img-btn:not(:last-child) {
+    margin-right: 27px;
 }
 
 .gallery__img-wrapper {
@@ -235,25 +256,17 @@ img {
     border: 2px solid transparent;
     width: 92px;
     height: 92px;
-    border-radius: 10px;
+    border-radius: 14px;
     cursor: pointer;
-}
-
-.gallery__img-wrapper:not(:last-child) {
-    margin-right: 31px;
-}
-
-.gallery__img-wrapper:hover .gallery__img-hover {
+    overflow: hidden;
     display: block;
-    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.gallery__img-wrapper:active {
-    border: 2px solid var(--accent-color);
-}
-
-.gallery__img-wrapper:active .gallery__img-hover {
-    background-color: rgba(255, 255, 255, 0.75);
+.gallery__img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .gallery__img-hover {
@@ -262,14 +275,21 @@ img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    left: 0;
+    top: 0;
 }
 
-.gallery__img {
-    border-radius: 10px;
-    width: 88px;
-    height: 88px;
+.gallery__img:hover + .gallery__img-hover {
     display: block;
 }
+
+.gallery__img.active + .gallery__img-hover {
+    display: block;
+    background-color: rgba(255, 255, 255, .75);
+}
+
 
 .hero__content {
     width: 445px;
@@ -357,7 +377,8 @@ img {
     border: none;
     outline: none;
     line-height: 10px;
-    font-size: 30px;
+    font-size: 32px;
+    padding: 0;
     transition: color 0.4s ease;
     cursor: pointer;
 }
@@ -372,6 +393,10 @@ img {
     font-weight: 700;
     line-height: 19.84px;
     color: var(--title-color);
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .add-to-cart__btn {
@@ -393,4 +418,113 @@ img {
 
 .add-to-cart__btn:hover {
     background-color: var(--accent-color--hover);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    background-color:rgba(29, 32, 38, 0.5);
+    position: fixed;
+    z-index: 500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal--show {
+    display: block;
+}
+
+.modal::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+.modal::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+  
+.modal::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-image: linear-gradient(180deg, var(--accent-color) 0%, #e1e7a7 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}
+
+.modal__dialog {
+    padding-left: 280px;
+    padding-right: 280px;
+    padding-top: 89px;
+    z-index: 50;
+}
+
+.modal__close-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.modal__close-btn:hover {
+    color: var(--accent-color);
+}
+
+.modal__img-wrapper {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.modal__img {
+    width: 550px;
+    height: 550px;
+    border-radius: 15px;
+    display: block;
+}
+
+.modal__img-change {
+    padding: 0;
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: var(--title-color);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+.modal__img-change:hover {
+    color: var(--accent-color);
+}
+
+.prev-btn {
+    left: 0;
+    top: 237px;
+    transform: translateX(-50%);
+}
+
+.next-btn {
+    right: 0;
+    top: 237px;
+    transform: translateX(50%);
+}
+
+.modal__gallery {
+    padding-left: 53px;
+    padding-right: 53px;
 }
