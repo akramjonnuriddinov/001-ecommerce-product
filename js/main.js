@@ -33,7 +33,6 @@ const elHeroGalleryImg = document.querySelectorAll('.js-hero-gallery-img');
 elHeroGalleryImgBtn.forEach(function (item, index) {
     item.addEventListener('click', function () {
         elHeroImg.src = elHeroGalleryImg[index].src;
-        elHeroImg.srcset = elHeroGalleryImg[index].src;
 
         elHeroGalleryImg.forEach(function (item, index) {
             item.classList.remove('active');
@@ -71,32 +70,29 @@ elGalleryImgBtn.forEach(function(item, index) {
     });
 });
 
-// PREVIOUS BTN
-elPrevBtn.addEventListener('click', function () {
-    elGalleryImg.forEach(function (item, index) {
-        if (elGalleryImg[index].classList == 'gallery__img js-gallery-img active') {
-            item.classList.remove('active');
-            elGalleryImg[index-1].classList.add('active');
-            elModalImg.src = elGalleryImg[index-1].src;
-        }
-    });
-});
 
-// NEXT BTN
-elNextBtn.addEventListener('click', function (item, index) {
-    elGalleryImg.forEach(function (item, index) {
-        if (index != 0) {
+
+if (elNextBtn) {
+    elNextBtn.addEventListener('click', function () {
+        elGalleryImg.forEach(function (item, index) {
             if (elGalleryImg[index].classList == 'gallery__img js-gallery-img active') {
-                elModalImg.src = elGalleryImg[index + 1].src;
                 item.classList.remove('active');
                 elGalleryImg[index+1].classList.add('active');
+                elModalImg.src = elGalleryImg[index+1].src;
             }
-        } else {
-            if (elGalleryImg[index].classList == 'gallery__img js-gallery-img active') {
-                elModalImg.src = elGalleryImg[3].src;
-                item.classList.remove('active');
-                elGalleryImg[index+1].classList.add('active');
-            }
-        }
+        });
     });
-});
+}
+
+
+if (elPrevBtn) {
+    elPrevBtn.addEventListener('click', function () {
+        elGalleryImg.forEach(function (item, index) {
+            if (elGalleryImg[index].classList == 'gallery__img js-gallery-img active') {
+                item.classList.remove('active');
+                elGalleryImg[index-1].classList.add('active');
+                elModalImg.src = elGalleryImg[index-1].src;
+            }
+        });
+    });
+}
